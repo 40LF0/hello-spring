@@ -19,6 +19,7 @@ public class Terms extends BaseEntity {
     private Long termsId;
     @Column(nullable = false, length = 20)
     private String title;
+    @Column(columnDefinition = "TEXT")
     private String body;
     private Boolean optional;
 

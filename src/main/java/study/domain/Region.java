@@ -3,10 +3,7 @@ package study.domain;
 import lombok.*;
 import study.common.BaseEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -18,6 +15,7 @@ public class Region extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long RegionId;
+    @Column(nullable = false,length = 20)
     private String name;
 
 }

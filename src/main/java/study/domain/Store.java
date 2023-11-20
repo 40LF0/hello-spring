@@ -17,7 +17,9 @@ public class Store extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long storeId;
+    @Column(nullable = false,length = 50)
     private String name;
+    @Column(nullable = false,length = 50)
     private String address;
     private Double score;
 

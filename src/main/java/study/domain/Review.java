@@ -16,6 +16,7 @@ public class Review extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewId;
+    @Column(columnDefinition = "TEXT")
     private String body;
     private Double score;
 
