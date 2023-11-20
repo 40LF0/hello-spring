@@ -5,6 +5,8 @@ import study.common.BaseEntity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -22,5 +24,13 @@ public class Store extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")
     private Region region;
+
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+    private List<Mission> missionList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+    private List<Review> reviewList = new ArrayList<>();
+
+
 
 }

@@ -4,6 +4,8 @@ import lombok.*;
 import study.common.BaseEntity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -24,4 +26,7 @@ public class Review extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "store_id")
     private Store store;
+
+    @OneToMany(mappedBy = "review", cascade = CascadeType.ALL)
+    private List<ReviewImage> reviewImageList = new ArrayList<>();
 }

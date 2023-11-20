@@ -19,6 +19,8 @@ public class Mission extends BaseEntity {
     private Long missionId;
     private Long reward;
     private LocalDate deadline;
+
+    @Column(columnDefinition = "TEXT")
     private String mission_spec;
 
     @ManyToOne(fetch = FetchType.LAZY)
