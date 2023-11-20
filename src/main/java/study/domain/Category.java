@@ -1,6 +1,7 @@
 package study.domain;
 
-import lombok.Getter;
+import lombok.*;
+import study.common.BaseEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,14 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
 
-@Getter
 @Entity
-public class Category {
+@Getter
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+public class Category extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long categoryId;
     private String name;
-    private LocalDate createdAt;
-    private LocalDate updateAt;
 
 }

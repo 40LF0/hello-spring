@@ -1,21 +1,23 @@
 package study.domain;
 
-import lombok.Getter;
+import lombok.*;
+import study.common.BaseEntity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Getter
 @Entity
-public class Store {
+@Getter
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+public class Store extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long storeId;
     private String name;
     private String address;
     private Double score;
-    private LocalDate createdAt;
-    private LocalDate updateAt;
 
     @ManyToOne
     @JoinColumn(name = "region_id")

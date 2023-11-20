@@ -1,19 +1,18 @@
 package study.domain;
 
 import lombok.Getter;
+import study.common.BaseEntity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Getter
 @Entity
-public class ReviewImage {
+public class ReviewImage extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ReviewImageId;
     private String imageUrl;
-    private LocalDate createdAt;
-    private LocalDate updateAt;
 
     @ManyToOne
     @JoinColumn(name = "review_id")

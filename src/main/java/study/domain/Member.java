@@ -1,6 +1,7 @@
 package study.domain;
 
-import lombok.Getter;
+import lombok.*;
+import study.common.BaseEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,9 +10,12 @@ import javax.persistence.Id;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Getter
 @Entity
-public class Member {
+@Getter
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+public class Member extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long memberId;
@@ -23,8 +27,6 @@ public class Member {
     private String status;
     private LocalDate inactiveDate;
     private String socialType;
-    private LocalDate createAt;
-    private LocalDate updateAt;
     private String email;
     private Long point;
 }

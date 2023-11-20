@@ -1,18 +1,20 @@
 package study.domain;
 
-import lombok.Getter;
+import lombok.*;
+import study.common.BaseEntity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Getter
 @Entity
-public class MemberPrefer {
+@Getter
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+public class MemberPrefer extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long missionId;
-    private LocalDate createdAt;
-    private LocalDate updateAt;
 
     @ManyToOne
     @JoinColumn(name = "member_id")

@@ -1,12 +1,16 @@
 package study.domain;
 
-import lombok.Getter;
+import lombok.*;
+import study.common.BaseEntity;
 
 import javax.persistence.*;
 
-@Getter
 @Entity
-public class Review {
+@Getter
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+public class Review extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewId;
