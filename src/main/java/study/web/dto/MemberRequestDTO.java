@@ -1,4 +1,4 @@
-package study.domain.member;
+package study.web.dto;
 
 import lombok.Getter;
 

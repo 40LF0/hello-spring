@@ -1,4 +1,4 @@
-package study.domain.temp.service;
+package study.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

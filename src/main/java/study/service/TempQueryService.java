@@ -1,4 +1,4 @@
-package study.domain.temp.service;
+package study.service;
 
 public interface TempQueryService {
 

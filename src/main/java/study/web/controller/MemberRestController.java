@@ -1,4 +1,4 @@
-package study.domain.member;
+package study.web.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import study.common.apiResponse.ApiResponse;
+import study.service.MemberCommandService;
+import study.web.dto.MemberRequestDTO;
+import study.web.dto.MemberResponseDTO;
 
 import javax.validation.Valid;
 

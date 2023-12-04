@@ -1,4 +1,4 @@
-package study.domain.member;
+package study.domain;
 
 import lombok.*;
 import study.common.BaseEntity;

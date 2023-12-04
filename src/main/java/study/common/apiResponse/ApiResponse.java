@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import study.common.apiResponse.code.status.SuccessStatus;
-import study.domain.temp.dto.TempResponse;
 
 @Getter
 @AllArgsConstructor

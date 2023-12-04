@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class ReviewImage extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ReviewImageId;
+    private Long reviewImageId;
     @Column(columnDefinition = "TEXT")
     private String imageUrl;
 

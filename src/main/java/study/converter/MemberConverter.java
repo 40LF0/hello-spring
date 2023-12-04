@@ -1,6 +1,9 @@
-package study.domain.member;
+package study.converter;
 
 import study.common.Gender;
+import study.domain.Member;
+import study.web.dto.MemberRequestDTO;
+import study.web.dto.MemberResponseDTO;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -36,9 +39,9 @@ public class MemberConverter {
                 .gender(gender)
                 .name(request.getName())
                 .memberPreferList(new ArrayList<>())
-                .birthYear(Long.valueOf(request.birthYear))
-                .birthMonth(Long.valueOf(request.birthMonth))
-                .birthDay(Long.valueOf(request.birthDay))
+                .birthYear(Long.valueOf(request.getBirthYear()))
+                .birthMonth(Long.valueOf(request.getBirthMonth()))
+                .birthDay(Long.valueOf(request.getBirthDay()))
                 .build();
     }
 }

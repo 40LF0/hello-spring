@@ -1,4 +1,4 @@
-package study.domain.temp.dto;
+package study.web.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
