@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import study.common.apiResponse.code.status.ErrorStatus;
-import study.common.apiResponse.exception.handler.CategoryHandler;
+import study.common.apiResponse.exception.handler.ErrorHandler;
 import study.converter.MemberPreferConverter;
 import study.domain.Category;
 import study.domain.Member;
@@ -28,12 +28,12 @@ public class MemberCommandServiceImpl implements MemberCommandService{
 
     @Override
     @Transactional
-    public Member joinMember(MemberRequestDTO.JoinDto request) {
+    public Member joinMember(MemberRequestDTO.MemberJoinDto request) {
 
         Member newMember = MemberConverter.toMember(request);
         List<Category> categoryList = request.getPreferCategory().stream()
                 .map(category -> {
-                    return categoryRepository.findById(category).orElseThrow(() -> new CategoryHandler(ErrorStatus.CATEGORY_NOT_FOUND));
+                    return categoryRepository.findById(category).orElseThrow(() -> new ErrorHandler(ErrorStatus.CATEGORY_NOT_FOUND));
                 }).collect(Collectors.toList());
 
         List<MemberPrefer> memberPreferList = MemberPreferConverter.toMemberPreferList(categoryList);

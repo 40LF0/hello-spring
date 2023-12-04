@@ -1,5 +1,6 @@
 package study.web.dto;
 
+import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -7,14 +8,14 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-public class StoreResponseDTO {
+public class ReviewResponseDTO {
 
     @Builder
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class StoreJoinResultDTO {
-        Long storeId;
+    public static class ReviewJoinResultDTO {
+        Long reviewId;
         LocalDateTime createdAt;
     }
 }

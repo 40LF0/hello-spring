@@ -1,6 +1,9 @@
 package study.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import study.common.BaseEntity;
 
 import javax.persistence.*;
@@ -8,6 +11,9 @@ import java.time.LocalDate;
 
 @Getter
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ReviewImage extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
