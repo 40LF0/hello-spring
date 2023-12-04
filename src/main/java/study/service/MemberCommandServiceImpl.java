@@ -37,6 +37,9 @@ public class MemberCommandServiceImpl implements MemberCommandService{
                             CategoryHandler(ErrorStatus.CATEGORY_NOT_FOUND));
                 }).collect(Collectors.toList());
 
+        List<MemberPrefer> memberPreferList = MemberPreferConverter.toMemberPreferList(categoryList);
+        memberPreferList.forEach(memberPrefer -> {memberPrefer.setMember(newMember);});
+
         return memberRepository.save(newMember);
     }
 }

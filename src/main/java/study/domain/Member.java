@@ -36,12 +36,12 @@ public class Member extends BaseEntity{
     private String address;
     @Column(length = 40)
     private String specAddress;
-    @Column(nullable = false,length = 15)
+    @Column(length = 15)
     private String status;
     private LocalDate inactiveDate;
     @Column(length = 10)
     private String socialType;
-    @Column(nullable = false,length = 50)
+    @Column(length = 50)
     private String email;
     private Long point;
 
