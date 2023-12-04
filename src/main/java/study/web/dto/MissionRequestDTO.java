@@ -18,7 +18,7 @@ public class MissionRequestDTO {
         Long missionId;
         Long reward;
         LocalDate deadline;
-        String mission_spec;
+        String missionSpec;
         Long storeId;
     }
 }
