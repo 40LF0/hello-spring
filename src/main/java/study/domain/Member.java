@@ -1,6 +1,9 @@
 package study.domain;
 
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import study.common.BaseEntity;
 import study.common.Gender;
 import study.domain.MemberAgree;
@@ -16,6 +19,8 @@ import java.util.List;
 
 @Entity
 @Getter
+@DynamicUpdate
+@DynamicInsert
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -36,13 +41,15 @@ public class Member extends BaseEntity{
     private String address;
     @Column(length = 40)
     private String specAddress;
-    @Column(length = 15)
+
+    @Column(columnDefinition = "VARCHAR(15) DEFAULT 'ACTIVE'")
     private String status;
     private LocalDate inactiveDate;
     @Column(length = 10)
     private String socialType;
     @Column(length = 50)
     private String email;
+    @ColumnDefault("0")
     private Long point;
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
