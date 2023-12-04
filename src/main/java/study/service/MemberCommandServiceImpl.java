@@ -32,10 +32,7 @@ public class MemberCommandServiceImpl implements MemberCommandService{
 
         Member newMember = MemberConverter.toMember(request);
         List<Category> categoryList = request.getPreferCategory().stream()
-                .map(category -> {
-                    return categoryRepository.findById(category).orElseThrow(() -> new
-                            CategoryHandler(ErrorStatus.CATEGORY_NOT_FOUND));
-                }).collect(Collectors.toList());
+                .map(category -> categoryRepository.findById(category).get()).collect(Collectors.toList());
 
         List<MemberPrefer> memberPreferList = MemberPreferConverter.toMemberPreferList(categoryList);
         memberPreferList.forEach(memberPrefer -> {memberPrefer.setMember(newMember);});
