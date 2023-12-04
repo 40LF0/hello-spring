@@ -2,9 +2,9 @@ package study.domain;
 
 import lombok.*;
 import study.common.BaseEntity;
+import study.domain.member.Member;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Getter
