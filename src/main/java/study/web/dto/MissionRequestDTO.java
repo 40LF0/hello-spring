@@ -3,6 +3,7 @@ package study.web.dto;
 import lombok.Getter;
 import study.domain.Store;
 import study.validation.annotation.ExistCategories;
+import study.validation.annotation.ExistStore;
 
 import javax.persistence.Column;
 import javax.persistence.FetchType;
@@ -19,6 +20,7 @@ public class MissionRequestDTO {
         Long reward;
         LocalDate deadline;
         String missionSpec;
+        @ExistStore
         Long storeId;
     }
 }
