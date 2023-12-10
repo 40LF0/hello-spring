@@ -22,7 +22,7 @@ public class StoreCommandServiceImpl implements StoreCommandService{
 
     @Override
     @Transactional
-    public Store joinStore(StoreRequestDTO.StoreJoinDto request) {
+    public Store joinStore(StoreRequestDTO.StoreJoinDTO request) {
         Store store = StoreConverter.toStore(request);
         Region region = regionRepository.findById(request.getRegionId()).orElseThrow(() -> new ErrorHandler(ErrorStatus.REGION_NOT_FOUND));
         store.setRegion(region);
