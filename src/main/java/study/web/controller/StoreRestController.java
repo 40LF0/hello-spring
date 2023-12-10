@@ -11,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import study.common.apiResponse.ApiResponse;
+import study.converter.ReviewConverter;
 import study.converter.StoreConverter;
 import study.domain.Review;
 import study.domain.Store;
@@ -18,6 +19,7 @@ import study.service.StoreCommandService;
 import study.service.StoreQueryService;
 import study.common.validateAnotation.annotation.CheckPage;
 import study.common.validateAnotation.annotation.ExistStore;
+import study.web.dto.ReviewResponseDTO;
 import study.web.dto.StoreRequestDTO;
 import study.web.dto.StoreResponseDTO;
 
@@ -51,8 +53,8 @@ public class StoreRestController {
             @Parameter(name = "storeId", description = "가게의 아이디, path variable 입니다!"),
             @Parameter(name = "page", description = "페이지 번호, 0번 페이지가 시작입니다"),
     })
-    public ApiResponse<StoreResponseDTO.ReviewPreViewListDTO> getReviewList(@ExistStore @PathVariable(name = "storeId") Long storeId, @CheckPage @RequestParam(name = "page") Integer page) {
+    public ApiResponse<ReviewResponseDTO.ReviewPreViewListDTO> getReviewList(@ExistStore @PathVariable(name = "storeId") Long storeId, @CheckPage @RequestParam(name = "page") Integer page) {
         Page<Review> reviewList = storeQueryService.getReviewList(storeId, page);
-        return ApiResponse.onSuccess(StoreConverter.reviewPreViewListDTO(reviewList));
+        return ApiResponse.onSuccess(ReviewConverter.reviewPreViewListDTO(reviewList));
     }
 }

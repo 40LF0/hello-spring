@@ -4,10 +4,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import study.domain.Category;
+import study.domain.Member;
 import study.domain.Review;
 import study.domain.Store;
 
 public interface ReviewRepository extends JpaRepository<Review, Long> {
     Page<Review> findAllByStore(Store store, Pageable pageable);
+
+    Page<Review> findAllByMember(Member member, PageRequest of);
 }
