@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import study.common.BaseEntity;
+import study.domain.baseEntity.BaseEntity;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Getter
 @Entity

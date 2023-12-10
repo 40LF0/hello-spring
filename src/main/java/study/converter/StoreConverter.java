@@ -3,6 +3,7 @@ package study.converter;
 import org.springframework.data.domain.Page;
 import study.domain.Review;
 import study.domain.Store;
+import study.web.dto.ReviewResponseDTO;
 import study.web.dto.StoreRequestDTO;
 import study.web.dto.StoreResponseDTO;
 
@@ -39,28 +40,7 @@ public class StoreConverter {
                 .createdAt(LocalDateTime.now())
                 .build();
     }
-    public static StoreResponseDTO.ReviewPreViewDTO reviewPreViewDTO(Review review){
-        return StoreResponseDTO.ReviewPreViewDTO.builder()
-                .ownerNickname(review.getMember().getName())
-                .score(review.getScore())
-                .createdAt(review.getCreatedAt().toLocalDate())
-                .body(review.getBody())
-                .build();
-    }
-    public static StoreResponseDTO.ReviewPreViewListDTO reviewPreViewListDTO(Page<Review> reviewList){
 
-        List<StoreResponseDTO.ReviewPreViewDTO> reviewPreViewDTOList = reviewList.stream()
-                .map(StoreConverter::reviewPreViewDTO).collect(Collectors.toList());
-
-        return StoreResponseDTO.ReviewPreViewListDTO.builder()
-                .isLast(reviewList.isLast())
-                .isFirst(reviewList.isFirst())
-                .totalPage(reviewList.getTotalPages())
-                .totalElements(reviewList.getTotalElements())
-                .listSize(reviewPreViewDTOList.size())
-                .reviewList(reviewPreViewDTOList)
-                .build();
-    }
 
 
 

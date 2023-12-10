@@ -1,4 +1,4 @@
-package study.common;
+package study.domain.baseEntity;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
@@ -22,4 +22,10 @@ public abstract class BaseEntity {
     @LastModifiedDate
     @Column(columnDefinition = "datetime(6)")
     private LocalDateTime updatedAt;
+
+    public enum Gender {
+        MALE,
+        FEMALE,
+        NONE
+    }
 }

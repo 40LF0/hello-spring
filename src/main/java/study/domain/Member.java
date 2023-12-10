@@ -4,16 +4,10 @@ import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import study.common.BaseEntity;
-import study.common.Gender;
-import study.domain.MemberAgree;
-import study.domain.MemberMission;
-import study.domain.MemberPrefer;
-import study.domain.Review;
+import study.domain.baseEntity.BaseEntity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
