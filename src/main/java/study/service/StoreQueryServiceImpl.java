@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import study.common.apiResponse.code.status.ErrorStatus;
 import study.common.apiResponse.exception.handler.ErrorHandler;
+import study.domain.Mission;
 import study.domain.Review;
 import study.domain.Store;
+import study.repository.MissionRepository;
 import study.repository.ReviewRepository;
 import study.repository.StoreRepository;
 
@@ -20,8 +22,8 @@ import java.util.Optional;
 public class StoreQueryServiceImpl implements StoreQueryService{
 
     private final StoreRepository storeRepository;
-
     private final ReviewRepository reviewRepository;
+    private final MissionRepository missionRepository;
     @Override
     public Store findStore(Long id) {
         Optional<Store> store = storeRepository.findById(id);
@@ -36,5 +38,12 @@ public class StoreQueryServiceImpl implements StoreQueryService{
         Store store = findStore(storeId);
         Page<Review> StorePage = reviewRepository.findAllByStore(store, PageRequest.of(page, 10));
         return StorePage;
+    }
+
+    @Override
+    public Page<Mission> getMissionList(Long storeId, Integer page) {
+        Store store = findStore(storeId);
+        Page<Mission> missionPage = missionRepository.findAllByStore(store, PageRequest.of(page, 10));
+        return missionPage;
     }
 }
