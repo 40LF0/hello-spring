@@ -1,6 +1,9 @@
 package study.converter;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+import study.domain.MemberMission;
 import study.domain.Mission;
 import study.domain.Review;
 import study.web.dto.MissionRequestDTO;
@@ -34,6 +37,7 @@ public class MissionConverter {
                 .updateAt(mission.getUpdatedAt().toLocalDate())
                 .deadline(mission.getDeadline())
                 .missionSpec(mission.getMissionSpec())
+                .reward(mission.getReward())
                 .build();
     }
     public static MissionResponseDTO.MissionPreviewListDTO reviewPreViewListDTO(Page<Mission> missionList){
@@ -51,4 +55,13 @@ public class MissionConverter {
                 .build();
     }
 
+    public static Page<Mission> toMissionPageFromMemberMissionPage(Page<MemberMission> memberMissions) {
+        List<Mission> missions = memberMissions.stream()
+                .map(MemberMission::getMission)
+                .collect(Collectors.toList());
+
+        Pageable pageable = memberMissions.getPageable();
+
+        return new PageImpl<>(missions, pageable, memberMissions.getTotalElements());
+    }
 }
