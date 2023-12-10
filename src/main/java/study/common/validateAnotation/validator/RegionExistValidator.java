@@ -1,16 +1,13 @@
-package study.validation.validator;
+package study.common.validateAnotation.validator;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import study.common.apiResponse.code.status.ErrorStatus;
-import study.repository.CategoryRepository;
 import study.repository.RegionRepository;
-import study.validation.annotation.ExistCategories;
-import study.validation.annotation.ExistRegion;
+import study.common.validateAnotation.annotation.ExistRegion;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.util.List;
 
 @Component
 @RequiredArgsConstructor

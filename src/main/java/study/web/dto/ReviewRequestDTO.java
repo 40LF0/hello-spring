@@ -1,7 +1,7 @@
 package study.web.dto;
 
 import lombok.Getter;
-import study.validation.annotation.ExistStore;
+import study.common.validateAnotation.annotation.ExistStore;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package study.converter;
 
-import study.common.Gender;
 import study.domain.Member;
+import study.domain.baseEntity.BaseEntity;
 import study.web.dto.MemberRequestDTO;
 import study.web.dto.MemberResponseDTO;
 
@@ -19,17 +19,17 @@ public class MemberConverter {
 
     public static Member toMember(MemberRequestDTO.MemberJoinDto request){
 
-        Gender gender = null;
+        BaseEntity.Gender gender = null;
 
         switch (request.getGender()){
             case 1:
-                gender = Gender.MALE;
+                gender = BaseEntity.Gender.MALE;
                 break;
             case 2:
-                gender = Gender.FEMALE;
+                gender = BaseEntity.Gender.FEMALE;
                 break;
             case 3:
-                gender = Gender.NONE;
+                gender = BaseEntity.Gender.NONE;
                 break;
         }
 

@@ -1,7 +1,7 @@
 package study.domain;
 
 import lombok.*;
-import study.common.BaseEntity;
+import study.domain.baseEntity.BaseEntity;
 
 import javax.persistence.*;
 import java.time.LocalDate;

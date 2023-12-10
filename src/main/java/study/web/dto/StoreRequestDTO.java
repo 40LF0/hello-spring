@@ -1,7 +1,7 @@
 package study.web.dto;
 
 import lombok.Getter;
-import study.validation.annotation.ExistRegion;
+import study.common.validateAnotation.annotation.ExistRegion;
 
 public class StoreRequestDTO {
     @Getter

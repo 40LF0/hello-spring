@@ -1,8 +1,7 @@
-package study.validation.annotation;
+package study.common.validateAnotation.annotation;
 
 
-import study.validation.validator.RegionExistValidator;
-import study.validation.validator.StoreExistValidator;
+import study.common.validateAnotation.validator.StoreExistValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
