@@ -2,6 +2,7 @@ package study.domain;
 
 import lombok.*;
 import study.common.BaseEntity;
+import study.domain.MemberPrefer;
 
 import javax.persistence.*;
 import java.util.ArrayList;

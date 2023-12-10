@@ -1,6 +1,6 @@
-package study.domain.temp;
+package study.converter;
 
-import study.domain.temp.dto.TempResponse;
+import study.web.dto.TempResponse;
 
 public class TempConverter {
 

@@ -1,4 +1,4 @@
-package study.domain.temp;
+package study.web.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import study.common.apiResponse.ApiResponse;
-import study.domain.temp.dto.TempResponse;
-import study.domain.temp.service.TempQueryService;
+import study.converter.TempConverter;
+import study.web.dto.TempResponse;
+import study.service.TempQueryService;
 
 @RestController
 @RequestMapping("/temp")

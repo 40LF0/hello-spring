@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class Region extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long RegionId;
+    private Long regionId;
     @Column(nullable = false,length = 20)
     private String name;
 

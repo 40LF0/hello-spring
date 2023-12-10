@@ -1,7 +1,15 @@
 package study.domain;
 
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import study.common.BaseEntity;
+import study.common.Gender;
+import study.domain.MemberAgree;
+import study.domain.MemberMission;
+import study.domain.MemberPrefer;
+import study.domain.Review;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,6 +19,8 @@ import java.util.List;
 
 @Entity
 @Getter
+@DynamicUpdate
+@DynamicInsert
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -20,20 +30,26 @@ public class Member extends BaseEntity{
     private Long memberId;
     @Column(nullable = false,length = 20)
     private String name;
+
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false,length = 10)
-    private String gender;
-    private Long age;
+    private Gender gender;
+    private Long birthYear;
+    private Long birthMonth;
+    private Long birthDay;
     @Column(nullable = false,length = 40)
     private String address;
     @Column(length = 40)
-    private String spec_address;
-    @Column(nullable = false,length = 15)
+    private String specAddress;
+
+    @Column(columnDefinition = "VARCHAR(15) DEFAULT 'ACTIVE'")
     private String status;
     private LocalDate inactiveDate;
     @Column(length = 10)
     private String socialType;
-    @Column(nullable = false,length = 50)
+    @Column(length = 50)
     private String email;
+    @ColumnDefault("0")
     private Long point;
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)

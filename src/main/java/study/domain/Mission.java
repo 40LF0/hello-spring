@@ -10,6 +10,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -21,7 +22,7 @@ public class Mission extends BaseEntity {
     private LocalDate deadline;
 
     @Column(columnDefinition = "TEXT")
-    private String mission_spec;
+    private String missionSpec;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "store_id")

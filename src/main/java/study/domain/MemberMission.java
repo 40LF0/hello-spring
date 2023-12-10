@@ -4,7 +4,6 @@ import lombok.*;
 import study.common.BaseEntity;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Getter
