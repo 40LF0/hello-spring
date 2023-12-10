@@ -43,5 +43,6 @@ public class MissionResponseDTO {
         LocalDate updateAt;
         LocalDate deadline;
         String missionSpec;
+        Long reward;
     }
 }
